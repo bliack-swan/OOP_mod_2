@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(mod)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(mod
         reader/Reader.cpp
@@ -11,7 +11,7 @@ add_executable(mod
 
 project(tests)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(tests
         reader/Reader.cpp

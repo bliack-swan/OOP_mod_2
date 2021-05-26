@@ -5,14 +5,20 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <regex>
 
 class WordCounter {
 
 public:
     std::map<std::string, int> getWordToFrequencyMap(std::vector<std::string> words) {
         std::map<std::string, int> out;
+        std::string pattern = "[A-Z\\-]";
+        const std::regex e(pattern);
+
         for (std::string s: words) {
-            out[s] += 1;
+            if (regex_match(s, e)) {
+                out[s] += 1;
+            }
         }
         return out;
     }
