@@ -3,10 +3,16 @@ project(mod)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(mod main.cpp)
+add_executable(mod
+        reader/Reader.cpp
+        reader/FileReader.cpp
+        main.cpp)
 
 project(tests)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(tests tests.cpp)
+add_executable(tests
+        reader/Reader.cpp
+        reader/FileReader.cpp
+        tests.cpp)
