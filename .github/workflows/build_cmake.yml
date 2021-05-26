@@ -1,0 +1,27 @@
+name: Build project
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+
+      - name: Build project
+        uses: nicledomaS/cmake_build_action@v1.4
+        with:
+          submodule_update: ON
+          run_tests: ON
+          unit_test_build: -Dtest=ON
+
+      - name: List
+        run: ls -al /home/runner/work/OOP_mod_2/OOP_mod_2/build
+
+      - name: Run
+        run: /home/runner/work/OOP_mod_2/OOP_mod_2/build/mod
+
+      - name: Run tests
+        run: /home/runner/work/OOP_mod_2/OOP_mod_2/build/tests
