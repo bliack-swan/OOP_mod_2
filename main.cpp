@@ -5,7 +5,7 @@
 
 int main() {
     Reader *reader = new FileReader();
-    std::vector<std::string> chars = reader->read("C:\\Users\\владислав\\CLionProjects\\OOP_mod_2\\testFile.txt");
+    std::vector<std::string> chars = reader->read("YourFile");
     WordCounter wordCounter;
     std::map<std::string, int> m = wordCounter.getWordToFrequencyMap(chars);
     auto it = m.begin();
